@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Rand Scale | Information Decay & Forensic Reconstruction</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --black: #0a0a0a;
+            --gray: #222;
+            --text: #e0e0e0;
+        }
+        body {
+            background-color: var(--black);
+            color: var(--text);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=1000');
+            background-size: cover;
+            border-bottom: 3px solid var(--gold);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        h1, h2, h3 { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; }
+        .quote {
+            font-style: italic;
+            border-left: 4px solid var(--gold);
+            padding-left: 1rem;
+            margin: 2rem 0;
+            color: #bbb;
+        }
+        .definition-box {
+            background: var(--gray);
+            border: 1px solid #444;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+        .calculator {
+            background: #1a1a1a;
+            border: 2px solid var(--gold);
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 8px;
+        }
+        label { display: block; margin-bottom: 0.5rem; color: var(--gold); font-weight: bold; }
+        input {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.5rem;
+            background: #000;
+            border: 1px solid #444;
+            color: white;
+            box-sizing: border-box;
+        }
+        button {
+            background: var(--gold);
+            color: black;
+            border: none;
+            padding: 1rem 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            text-transform: uppercase;
+        }
+        button:hover { background: #b8962d; }
+        #results {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: #222;
+            border-left: 4px solid #00ff00;
+            display: none;
+        }
+        footer { text-align: center; padding: 2rem; font-size: 0.8rem; color: #666; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>A Theory of Information Decay</h1>
+    <p>Measuring Media Degradation Through Rands & Prototaxis</p>
+</header>
+
+<div class="container">
+    <section>
+        <div class="quote">
+            "By the nature of what information is, you can only preserve or destroy it. You cannot create information through processing; you can only refine the signal or add noise. Most 'journalists' today are simply high-performance noise generators."
+        </div>
+
+        <h2>The Core Concepts</h2>
+        
+        <div class="definition-box">
+            <h3>The Rand ($R$)</h3>
+            <p>A unit of transmission fidelity. It measures the delta between two sources. $1.0$ Rand represents lossless transmission. $0$ Rands represents total entropic noise where the signal is obliterated.</p>
+        </div>
+
+        <div class="definition-box">
+            <h3>The Prototaxis</h3>
+            <p>The smallest discrete packet of semantic information. To count as <strong>1 Prototaxis</strong>, a statement must establish a Subject-Predicate-Referent chain verifiable as a physical interaction. If it's a value judgment (e.g., "The vibes are bad"), it has 0 prototaxis.</p>
+        </div>
+
+        <div class="definition-box">
+            <h3>The Semantic Event Horizon</h3>
+            <p>Typically occurring at <strong>0.05 Rands</strong>. This is the "Point of No Return" where a medium stops reporting on an event and begins reporting on other reports. It is the realm of pure hyperreality and propaganda.</p>
+        </div>
+    </section>
+
+    
+
+    <section class="calculator">
+        <h2>Forensic Rand Extrapolator</h2>
+        <p>Use this to estimate how much original truth existed before the "telephone game" started.</p>
+        
+        <label>Prototaxis in Source A (Earlier/Less Mediated):</label>
+        <input type="number" id="bitsA" placeholder="e.g., 7 bits in a primary article">
+
+        <label>Prototaxis in Source B (Later/More Mediated):</label>
+        <input type="number" id="bitsB" placeholder="e.g., 3 bits in a tweet about it">
+
+        <label>Mediation Stages between A and B:</label>
+        <input type="number" id="stagesAB" placeholder="e.g., 2 steps">
+
+        <label>Mediation Stages between Original Event and Source A:</label>
+        <input type="number" id="stagesOriginA" placeholder="e.g., 1 step (witness to article)">
+
+        <button onclick="calculateDecay()">Calculate Forensic Estimate</button>
+
+        <div id="results">
+            <h3>Calculated Metrics:</h3>
+            <p id="randVal"></p>
+            <p id="originEst"></p>
+            <p id="horizonWarn" style="color: #ff4444; font-weight: bold;"></p>
+        </div>
+    </section>
+
+    <section>
+        <h2>Why This Matters</h2>
+        <p>Objectivism teaches us that existence exists and A is A. However, the media class operates on the assumption that reality is socially constructed. By using the Rand scale, we apply the <strong>Axiom of Action</strong> to journalism. We can treat news like radioactive isotopes—measuring the decay rate ($R$) between two known points to extrapolate the "Half-life of Truth."</p>
+        
+        <p>If you see a post about a news article, and the article has 10 facts (prototaxis) while the post only preserves 2, you have a Rand value of 0.2. If that article was already 3 stages removed from the event, you can guess that the original event was orders of magnitude more complex than the slop being fed to you.</p>
+    </section>
+</div>
+
+<footer>
+    &copy; 2026 TaxedBrass. All Rights Reserved. Stay Objective. Stay Dangerous.
+</footer>
+
+<script>
+function calculateDecay() {
+    const bitsA = parseFloat(document.getElementById('bitsA').value);
+    const bitsB = parseFloat(document.getElementById('bitsB').value);
+    const n = parseFloat(document.getElementById('stagesAB').value);
+    const m = parseFloat(document.getElementById('stagesOriginA').value);
+
+    if (!bitsA || !bitsB || !n) {
+        alert("Please fill in the required fields.");
+        return;
+    }
+
+    // Rand = (Bits_Final / Bits_Initial)^(1/n)
+    const rands = Math.pow((bitsB / bitsA), (1/n));
+    
+    // Estimate original: Bits_Original = Bits_A / (Rands^m)
+    const originalEst = bitsA / Math.pow(rands, m);
+
+    document.getElementById('results').style.display = 'block';
+    document.getElementById('randVal').innerHTML = `<strong>Decay Rate (Rands):</strong> ${rands.toFixed(4)}`;
+    document.getElementById('originEst').innerHTML = `<strong>Estimated Original Prototaxis:</strong> ${originalEst.toFixed(2)}`;
+
+    if (rands < 0.05) {
+        document.getElementById('horizonWarn').innerText = "CRITICAL: Current mediation is below the Semantic Event Horizon. Information is likely pure noise.";
+    } else {
+        document.getElementById('horizonWarn').innerText = "";
+    }
+}
+</script>
+
+</body>
+</html>
